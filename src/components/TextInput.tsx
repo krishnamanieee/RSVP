@@ -10,7 +10,7 @@ import Theme from '../theme';
 
 interface ITextInputProps extends TextInputProps {
   errorMessage?: string;
-  title: string;
+  title?: string;
 }
 
 class TextInput extends React.PureComponent<ITextInputProps, any> {
