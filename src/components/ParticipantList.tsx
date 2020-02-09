@@ -4,7 +4,9 @@ import ParticipantListItem from './listItem/ParticipantListItem';
 
 interface IParticipantListProps {
   data: any;
+  onItemPress: () => void;
 }
+
 class ParticipantList extends React.PureComponent<IParticipantListProps, any> {
   render(): React.ReactElement {
     return <View style={{flex: 1}}>{this.renderListView()}</View>;
@@ -38,7 +40,9 @@ class ParticipantList extends React.PureComponent<IParticipantListProps, any> {
 
   private keyExtractor = (item: any, index: number) => index.toString();
 
-  private onItemPress = () => {};
+  private onItemPress = () => {
+    this.props.onItemPress();
+  };
 }
 
 export default ParticipantList;

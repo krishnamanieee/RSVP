@@ -5,15 +5,22 @@ import SearchBar from '../components/SearchBar';
 import ParticipantList from '../components/ParticipantList';
 // @ts-ignore
 import SampleData from '../../__mockData__/SmapleData.json';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 const dataMock = SampleData;
 
+interface IHomeScreenProps {
+  navigation: StackNavigationProp<any>;
+}
 interface IHomeScreenState {
   data: any;
   searchKey: string;
 }
 
-class HomeScreen extends React.PureComponent<any, IHomeScreenState> {
+class HomeScreen extends React.PureComponent<
+  IHomeScreenProps,
+  IHomeScreenState
+> {
   public state = {
     data: dataMock,
     searchKey: '',
@@ -24,10 +31,17 @@ class HomeScreen extends React.PureComponent<any, IHomeScreenState> {
     return (
       <View style={{flex: 1}}>
         <SearchBar value={searchKey} onValueChange={this.onSearchValueChange} />
-        <ParticipantList data={data} />
+        <ParticipantList
+          data={data}
+          onItemPress={this.onParticipantItemPress}
+        />
       </View>
     );
   }
+
+  private onParticipantItemPress = () => {
+    this.props.navigation.navigate('Participant Details');
+  };
 
   private onSearchValueChange = (value: string) => {
     this.setState({searchKey: value});
