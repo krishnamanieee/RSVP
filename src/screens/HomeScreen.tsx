@@ -10,11 +10,11 @@ import {LocalStorage, LocalStorageKeys} from '../utils/LocalStorage';
 
 const dataMock = SampleData;
 
-interface IHomeScreenProps {
+export interface IHomeScreenProps {
   navigation: StackNavigationProp<any>;
 }
 
-interface IHomeScreenState {
+export interface IHomeScreenState {
   data: any;
   originalData: any[];
   loading: boolean;

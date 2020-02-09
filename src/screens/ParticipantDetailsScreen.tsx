@@ -3,7 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import Theme from '../theme';
 import moment from 'moment';
-interface IParticipantDetailsProps {
+export interface IParticipantDetailsProps {
   data: any;
   navigation: StackNavigationProp<any>;
 }
@@ -13,6 +13,7 @@ class ParticipantDetailsScreen extends React.PureComponent<
   {}
 > {
   render(): React.ReactNode {
+    // @ts-ignore
     const {data} = this.props.route.params;
     return (
       <>

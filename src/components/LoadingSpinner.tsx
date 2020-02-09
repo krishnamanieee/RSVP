@@ -8,13 +8,13 @@ import {
 } from 'react-native';
 import Theme from '../theme';
 
-interface IProps {
+export interface ILoadingSpinnerProps {
   visible: boolean;
   message?: string;
   size?: 'small' | 'large';
 }
 
-class LoadingSpinner extends React.PureComponent<IProps, {}> {
+class LoadingSpinner extends React.PureComponent<ILoadingSpinnerProps, {}> {
   public static defaultProps = {
     visible: false,
     message: 'Please Wait..',

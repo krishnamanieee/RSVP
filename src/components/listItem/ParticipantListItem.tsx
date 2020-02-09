@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Theme from '../../theme';
 
-interface IParticipantListItemProps {
+export interface IParticipantListItemProps {
   index: number;
   name: string;
   locality: string;

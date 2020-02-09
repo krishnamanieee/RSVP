@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList, ListRenderItemInfo, RefreshControl} from 'react-native';
 import ParticipantListItem from './listItem/ParticipantListItem';
 
-interface IParticipantListProps {
+export interface IParticipantListProps {
   data: any;
   loading: boolean;
   onItemPress: (item: any) => void;

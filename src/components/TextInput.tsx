@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import Theme from '../theme';
 
-interface ITextInputProps extends TextInputProps {
+export interface ITextInputProps extends TextInputProps {
   errorMessage?: string;
   title?: string;
 }

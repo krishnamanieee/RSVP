@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import TextInput from './TextInput';
 
-interface ISearchBarProps {
+export interface ISearchBarProps {
   value: string;
   onValueChange: (value: string) => void;
 }
