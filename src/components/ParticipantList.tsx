@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, FlatList, ListRenderItemInfo} from 'react-native';
+import {View, FlatList, ListRenderItemInfo, RefreshControl} from 'react-native';
 import ParticipantListItem from './listItem/ParticipantListItem';
 
 interface IParticipantListProps {
   data: any;
-  onItemPress: () => void;
+  loading: boolean;
+  onItemPress: (item: any) => void;
+  onRefresh: () => void;
 }
 
 class ParticipantList extends React.PureComponent<IParticipantListProps, any> {
@@ -13,19 +15,22 @@ class ParticipantList extends React.PureComponent<IParticipantListProps, any> {
   }
 
   private renderListView() {
-    const {data} = this.props;
+    const {data, onRefresh, loading} = this.props;
     return (
       <FlatList
         data={data}
         renderItem={this.renderItem}
         keyExtractor={this.keyExtractor}
+        refreshControl={
+          <RefreshControl refreshing={loading} onRefresh={onRefresh} />
+        }
       />
     );
   }
 
   private renderItem = (info: ListRenderItemInfo<any>) => {
     const {item, index} = info;
-    const onPress = () => this.onItemPress();
+    const onPress = () => this.onItemPress(item);
     return (
       <View>
         <ParticipantListItem
@@ -40,8 +45,8 @@ class ParticipantList extends React.PureComponent<IParticipantListProps, any> {
 
   private keyExtractor = (item: any, index: number) => index.toString();
 
-  private onItemPress = () => {
-    this.props.onItemPress();
+  private onItemPress = (item: any) => {
+    this.props.onItemPress(item);
   };
 }
 

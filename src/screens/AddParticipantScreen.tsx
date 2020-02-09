@@ -4,6 +4,7 @@ import DatePicker from 'react-native-datepicker';
 import TextInput from '../components/TextInput';
 import Theme from '../theme';
 import LoadingSpinner from '../components/LoadingSpinner';
+import {LocalStorage, LocalStorageKeys} from '../utils/LocalStorage';
 
 interface IErrorState {
   name: string;
@@ -172,19 +173,51 @@ class AddParticipantScreen extends React.PureComponent<
     });
   };
 
-  onSubmitPress = () => {
+  onSubmitPress = async () => {
     const {address, date, numberOfGuest, locality, age, name} = this.state;
     const validFromError: IVailFormReturn = this.isValidData();
+    if (validFromError.status) {
+      this.setState({errors: {...initialError, ...validFromError.errors}});
+      return;
+    }
     this.updateLoading();
 
-    if (validFromError.status) {
-      this.setState({errors: validFromError.errors});
-    }
-
-    setTimeout(() => {
+    setTimeout(async () => {
+      const item = {
+        id: Math.random().toFixed(0),
+        name,
+        age,
+        DOB: date,
+        locality,
+        guest: numberOfGuest,
+        address,
+      };
+      let data: any[] | null = [];
+      const fetchData = await LocalStorage.get<string>(
+        LocalStorageKeys.USER_DATA,
+      );
+      if (fetchData) {
+        data.push(item);
+        data.push(...JSON.parse(fetchData));
+      } else {
+        data.push(item);
+      }
+      await LocalStorage.set(LocalStorageKeys.USER_DATA, JSON.stringify(data));
       this.updateLoading();
+      this.resetTheFrom();
     }, 2000);
     //
+  };
+
+  resetTheFrom = () => {
+    this.setState({
+      name: '',
+      age: '',
+      date: '',
+      locality: '',
+      numberOfGuest: '',
+      address: '',
+    });
   };
 
   updateLoading = () => {
@@ -194,35 +227,35 @@ class AddParticipantScreen extends React.PureComponent<
 
   isValidData = (): IVailFormReturn => {
     const {address, date, numberOfGuest, locality, age, name} = this.state;
-    const errors: IErrorState = initialError;
-    this.setState({errors});
+    const errors: IErrorState = {...initialError};
+    this.setState({errors: {...errors}});
+    console.log('[[[98989>>>>>>>>', errors);
     let status: boolean = false;
-    if (name.length === 0) {
-        console.log('= name===', this.state);
+    if (name.length < 1) {
       status = true;
       errors.name = 'fill the input';
     }
-    if (age.length === 0) {
+    if (age.length < 1) {
       status = true;
       errors.age = 'fill the input';
     }
-    if (date.length === 0) {
+    if (date.length < 1) {
       status = true;
       errors.date = 'fill the input';
     }
-    if (locality.length === 0) {
-      status = true;
-      errors.locality = 'fill the input';
-    }
-    if (numberOfGuest.length === 0) {
+    if (numberOfGuest.length < 1) {
       status = true;
       errors.numberOfGuest = 'fill the input';
     }
-    if (address.length === 0) {
+    if (address.length < 1) {
       status = true;
       errors.address = 'fill the input';
     }
-
+    if (locality.length < 1) {
+      status = true;
+      errors.locality = 'fill the input';
+    }
+    console.log('err', errors);
     return {
       errors,
       status,

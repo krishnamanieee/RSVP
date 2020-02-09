@@ -20,9 +20,9 @@ class TextInput extends React.PureComponent<ITextInputProps, any> {
       <View style={styles.container}>
         {title && title.length > 0 && <Text style={styles.title}>{title}</Text>}
         <RNTextInput style={[styles.textInput, style]} {...props} />
-        {errorMessage && errorMessage.length > 0 ?
+        {errorMessage && errorMessage.length > 1 ? (
           <Text style={styles.errorText}>{errorMessage}</Text>
-         : null}
+        ) : null}
       </View>
     );
   }
