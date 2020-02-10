@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParticipantDetailsScreen should match match snapshot 1`] = `
+Array [
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#dadada",
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+            "width": 250,
+          },
+          Object {
+            "backgroundColor": "#fff",
+          },
+        ]
+      }
+    >
+      Name
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+          },
+          Object {
+            "backgroundColor": "#dadada",
+          },
+        ]
+      }
+    />
+  </View>,
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#dadada",
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+            "width": 250,
+          },
+          Object {
+            "backgroundColor": "#dadada",
+          },
+        ]
+      }
+    >
+      Age
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+          },
+          Object {
+            "backgroundColor": "#fff",
+          },
+        ]
+      }
+    />
+  </View>,
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#dadada",
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+            "width": 250,
+          },
+          Object {
+            "backgroundColor": "#fff",
+          },
+        ]
+      }
+    >
+      Number of Guest
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+          },
+          Object {
+            "backgroundColor": "#dadada",
+          },
+        ]
+      }
+    />
+  </View>,
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#dadada",
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+            "width": 250,
+          },
+          Object {
+            "backgroundColor": "#dadada",
+          },
+        ]
+      }
+    >
+      Locality
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+          },
+          Object {
+            "backgroundColor": "#fff",
+          },
+        ]
+      }
+    />
+  </View>,
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#dadada",
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+            "width": 250,
+          },
+          Object {
+            "backgroundColor": "#fff",
+          },
+        ]
+      }
+    >
+      DOB
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+          },
+          Object {
+            "backgroundColor": "#dadada",
+          },
+        ]
+      }
+    >
+      Monday, February 10th 2020
+    </Text>
+  </View>,
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#dadada",
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+            "width": 250,
+          },
+          Object {
+            "backgroundColor": "#dadada",
+          },
+        ]
+      }
+    >
+      Address
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+          },
+          Object {
+            "backgroundColor": "#fff",
+          },
+        ]
+      }
+    />
+  </View>,
+]
+`;

@@ -9,13 +9,13 @@
  */
 
 import React from 'react';
-import Router from './Router';
+import Navigation from './navigation';
 
 class App extends React.Component<any, any> {
   render(): React.ReactElement {
     return (
       <>
-        <Router />
+        <Navigation />
       </>
     );
   }

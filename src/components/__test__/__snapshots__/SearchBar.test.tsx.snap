@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should match match snapshot 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "marginHorizontal": 5,
+        "marginVertical": 5,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[MockFunction]}
+      placeholder="Search the participant"
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#dadada",
+            "paddingHorizontal": 5,
+            "paddingVertical": 10,
+          },
+          undefined,
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+</View>
+`;
